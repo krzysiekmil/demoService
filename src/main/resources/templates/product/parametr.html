@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+
+<div class="row">
+    <div class="col-sm-6">
+        <h2>Parametr</h2>
+    </div>
+</div>
+<form method="post" style="max-width:600px;" th:object="${parametr}">
+    <div class="form-group">
+        <label th:for="key">Parametr</label>
+        <input class="form-control" th:field="*{key}" />
+        <span th:errors="*{key}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="value">Value</label>
+        <input class="form-control" th:field="*{value}" />
+        <span th:errors="*{value}" class="error"></span>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</body>
+</html>
